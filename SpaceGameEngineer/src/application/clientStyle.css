@@ -1,0 +1,24 @@
+.log-background{
+    -fx-background-color: rgb(20 ,20 ,20);
+
+}
+.log-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: rgb(200, 200, 200);
+
+}
+
+
+.log-window{
+     -fx-background-color: rgb(40 ,40 ,40);
+}
+.log-window .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: rgb(200, 200, 200);
+}
+
+.button-good{
+    -fx-background-color: rgb(50,200,75);
+    -fx-text-fill: rgb(20, 20, 20);
+
+}

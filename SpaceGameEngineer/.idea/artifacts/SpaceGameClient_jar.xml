@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SpaceGameClient:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SpaceGameClient_jar</output-path>
+    <root id="archive" name="SpaceGameClient.jar">
+      <element id="module-output" name="SpaceGameEngineer" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../SpaceGameServer/out/artifacts/SpaceGameServer_jar/SpaceGameServer.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

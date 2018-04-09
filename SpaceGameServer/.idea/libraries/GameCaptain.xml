@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="GameCaptain">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../SpaceGameCaptain/out/artifacts/GameCaptain_jar/GameCaptain.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

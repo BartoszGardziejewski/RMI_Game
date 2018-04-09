@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SpaceGameServer">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../SpaceGameServer/out/artifacts/SpaceGameServer_jar/SpaceGameServer.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
