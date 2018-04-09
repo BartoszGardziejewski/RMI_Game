@@ -45,6 +45,11 @@ public class Player implements Serializable{
         myGame = game;
     }
 
+    public  void leaveGame(){
+        inGame = false;
+        myGame = null;
+    }
+
     public Game getGame(){
         return myGame;
     }

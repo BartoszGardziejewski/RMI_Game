@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/SpaceGameServer_jar</output-path>
     <root id="archive" name="SpaceGameServer.jar">
       <element id="module-output" name="SpaceGameServer" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../SpaceGameCaptain/out/artifacts/GameCaptain_jar/GameCaptain.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

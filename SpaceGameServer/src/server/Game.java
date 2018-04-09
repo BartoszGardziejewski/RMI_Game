@@ -21,6 +21,10 @@ public class Game  implements Serializable {
         players.add(player);
     }
 
+    public ArrayList<Player> getPlayers(){
+        return players;
+    }
+
     public Game(GameCaptainI gameCaptain) throws RemoteException, NotBoundException {
         this.players = new ArrayList<>();
         captain = gameCaptain;

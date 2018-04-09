@@ -67,7 +67,6 @@ public class GameServerController implements GameServerI {
         }
         games.add(tmpGame);
 
-
         cPlayer.joinGame(tmpGame);
         tmpGame.addPlayer(cPlayer);
 
@@ -85,6 +84,24 @@ public class GameServerController implements GameServerI {
         });
 
         return "game" + gameNumber;
+    }
+
+    @Override
+    public void shootDownServer(Player player, GameCaptainI captainI) throws RemoteException {
+
+        Player cPlayer = players.get(player.getName());
+        Game tmpGame = games.get(games.indexOf(cPlayer.getGame()));
+
+        for (Player fPlayer:
+        tmpGame.getPlayers()) {
+            fPlayer.leaveGame();
+        }
+
+        games.remove(tmpGame);
+
+        Platform.runLater(()-> {
+            manager.refreshPlayersList();
+        });
     }
 
     @Override

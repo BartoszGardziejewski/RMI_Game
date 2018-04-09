@@ -19,6 +19,8 @@ public class ApplicationManager extends Application {
         private  ApplicationController controller;
         private GameServerController server;
 
+        private static int port;
+
     public GameCaptainClient client;
 
         private static String clientName;
@@ -32,7 +34,7 @@ public class ApplicationManager extends Application {
             controller = loader.getController();
             controller.setManager(this);
 
-            primaryStage.setTitle(" Client ");
+            primaryStage.setTitle(" Captain ");
             primaryStage.setScene(new Scene(root, 800, 600));
             primaryStage.show();
 
@@ -43,10 +45,15 @@ public class ApplicationManager extends Application {
             setUpServer( client.setGameServer() );
         }
 
+        public void stopGame() throws RemoteException {
+            client.stopGameServer();
+            server = null;
+        }
+
         private void setUpServer(String name){
 
             try {
-                server = new GameServerController(1100,this, name);
+                server = new GameServerController(port,this, name);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
@@ -57,7 +64,7 @@ public class ApplicationManager extends Application {
             controller.MainLabel.setText("Hallow "+clientName);
 
             try {
-                client = new GameCaptainClient(1100,clientName,this);
+                client = new GameCaptainClient(port,clientName,this);
             } catch (RemoteException e) {
                 e.printStackTrace();
             } catch (NotBoundException e) {
@@ -79,12 +86,18 @@ public class ApplicationManager extends Application {
         }
 
         public static void main(String[] args) {
-            if(args.length == 0){
-                clientName = "player";
-            }
-            else {
+            if(args.length > 0 && args[0]!=null){
                 clientName = args[0];
             }
+            else {
+                clientName = "player";
+            }
+            if(args.length > 1 && args[1]!=null){
+                port=Integer.parseInt(args[1]);
+            }else {
+                port=1100;
+            }
+
             launch(args);
         }
 }

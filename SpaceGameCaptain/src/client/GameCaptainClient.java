@@ -36,6 +36,10 @@ public class GameCaptainClient implements GameCaptainI{
         return serverInterface.setUpNewServer(myPlayer,this);
     }
 
+    public void stopGameServer() throws RemoteException {
+        serverInterface.shootDownServer(myPlayer,this);
+    }
+
     public void logOut() throws RemoteException {
         serverInterface.playerLeft(myPlayer);
     }

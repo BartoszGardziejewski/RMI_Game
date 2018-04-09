@@ -36,7 +36,6 @@ public class GameClientController {
         System.out.println(" --  Right Engine Thrust = " + myPlayer.getRightEngineThrust());
 
         try {
-
             if(serverInterface.reportToCaptain(myPlayer)){
                 myPlayer.addPoint();
             }else {

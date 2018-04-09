@@ -21,6 +21,11 @@
     -fx-background-color: rgb(50,200,75);
     -fx-text-fill: rgb(20, 20, 20);
 }
+.button-bad{
+    -fx-background-color: rgb(200,50,75);
+    -fx-text-fill: rgb(20, 20, 20);
+}
+
 
 .scroll-pane{
     -fx-border-width: 0;

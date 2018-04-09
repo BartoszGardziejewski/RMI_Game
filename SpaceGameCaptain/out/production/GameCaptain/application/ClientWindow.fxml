@@ -18,7 +18,7 @@
                </BorderPane.margin></Label>
          </top>
          <bottom>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#startGame" prefHeight="25.0" styleClass="button-good" text="Start Game" BorderPane.alignment="CENTER" />
+            <Button fx:id="bottomButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#startGame" prefHeight="25.0" styleClass="button-good" text="Start Game" BorderPane.alignment="CENTER" />
          </bottom>
          <center>
             <ScrollPane hbarPolicy="NEVER" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">

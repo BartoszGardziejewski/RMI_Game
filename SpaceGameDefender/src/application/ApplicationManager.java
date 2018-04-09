@@ -22,6 +22,8 @@ public class ApplicationManager extends Application {
         public GameClientController client;
         private static String clientName;
 
+        private static int port;
+
         @Override
         public void start(Stage primaryStage) throws IOException {
 
@@ -31,7 +33,7 @@ public class ApplicationManager extends Application {
             controller = loader.getController();
             controller.setManager(this);
 
-            primaryStage.setTitle(" Client ");
+            primaryStage.setTitle(" Defender ");
             primaryStage.setScene(new Scene(root, 800, 600));
             primaryStage.show();
 
@@ -59,7 +61,7 @@ public class ApplicationManager extends Application {
             controller.MainLabel.setText(myDefender.toString());
 
             try {
-                client = new GameClientController(1100,myDefender,this);
+                client = new GameClientController(port,myDefender,this);
 
             } catch (RemoteException e) {
                 e.printStackTrace();
@@ -82,6 +84,12 @@ public class ApplicationManager extends Application {
             else {
                 clientName = args[0];
             }
+            if(args.length > 1 && args[1]!=null){
+                port=Integer.parseInt(args[1]);
+            }else {
+                port=1100;
+            }
+
             launch(args);
         }
 }

@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import server.GameServerController;
 import server.Player;
 
+import java.io.IOException;
 import java.rmi.RemoteException;
 import java.util.Map;
 
@@ -17,11 +18,19 @@ public class ApplicationManager extends Application {
         public GameServerController server;
         public ApplicationController controller;
 
+        private static int port;
+
         @Override
-        public void start(Stage primaryStage) throws Exception{
+        public void start(Stage primaryStage){
 
             FXMLLoader loader = new  FXMLLoader(getClass().getResource("ServerWindow.fxml"));
-            Parent root = loader.load();
+            Parent root = null;
+
+            try {
+                root = loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             controller = loader.getController();
 
@@ -43,7 +52,7 @@ public class ApplicationManager extends Application {
         private void setUpServer(){
 
             try {
-                server = new GameServerController(1100,this, "playerConnection");
+                server = new GameServerController(port,this, "playerConnection");
                 addLogMassage("Connected to RMI on port - " + server.getPort());
                 controller.MainLabel.setText("Connected on port "+server.getPort());
                 controller.MainLabel.setStyle(" -fx-text-fill: rgb(50 ,150 ,100); ");
@@ -82,6 +91,12 @@ public class ApplicationManager extends Application {
         }
 
         public static void main(String[] args) {
+            if (args.length > 0 && args[0] != null) {
+                port = Integer.parseInt(args[0]);
+            } else {
+                port = 1100;
+            }
+
             launch(args);
         }
 }

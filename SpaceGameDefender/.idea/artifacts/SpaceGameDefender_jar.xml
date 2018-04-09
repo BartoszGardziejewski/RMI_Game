@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SpaceGameDefender:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SpaceGameDefender_jar</output-path>
+    <root id="archive" name="SpaceGameDefender.jar">
+      <element id="module-output" name="SpaceGameDefender" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Beansy/someBeans.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../SpaceGameCaptain/out/artifacts/GameCaptain_jar/GameCaptain.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../SpaceGameServer/out/artifacts/SpaceGameServer_jar/SpaceGameServer.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
